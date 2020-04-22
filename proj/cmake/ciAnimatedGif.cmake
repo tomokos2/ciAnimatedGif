@@ -16,7 +16,7 @@ if(NOT TARGET ciGif)
     # Add include directories.
     # Notice that `cinderblock.xml` has `<includePath>src</includePath>`.
     # So you need to set `../../src/` to include.
-    target_include_directories(ciGif PUBLIC "${ciAnimatedGif_PROJECT_ROOT}/src" )
+    target_include_directories(ciGif PUBLIC "${ciGif_PROJECT_ROOT}/src" )
     target_include_directories(ciGif SYSTEM BEFORE PUBLIC "${CINDER_PATH}/include" )
 
 
