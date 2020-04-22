@@ -1,23 +1,23 @@
-if(NOT TARGET ciAnimatedGif)
+if(NOT TARGET ciGif)
     # Define ${Cinder-Notifications_PROJECT_ROOT}. ${CMAKE_CURRENT_LIST_DIR} is just the current directory.
-    get_filename_component(ciAnimatedGif_PROJECT_ROOT "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
+    get_filename_component(ciGif_PROJECT_ROOT "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
 
     # Define ${CINDER_PATH} as usual.
     get_filename_component(CINDER_PATH "C:/Users/tomok/Downloads/cinder_0.9.2_vc2015/cinder_0.9.2_vc2015/blocks/ciAnimatedGif/../../../.." ABSOLUTE)
 
     # Make a list of source files and define that to be ${SOURCE_LIST}.
     file(GLOB SOURCE_LIST CONFIGURE_DEPENDS
-            "${ciAnimatedGif_PROJECT_ROOT}/src/*.cpp"
+            "${ciGif_PROJECT_ROOT}/src/*.cpp"
             )
 
     # Create the library!
-    add_library(ciAnimatedGif ${SOURCE_LIST})
+    add_library(ciGif ${SOURCE_LIST})
 
     # Add include directories.
     # Notice that `cinderblock.xml` has `<includePath>src</includePath>`.
     # So you need to set `../../src/` to include.
-    target_include_directories(ciAnimatedGif PUBLIC "${ciAnimatedGif_PROJECT_ROOT}/src" )
-    target_include_directories(ciAnimatedGif SYSTEM BEFORE PUBLIC "${CINDER_PATH}/include" )
+    target_include_directories(ciGif PUBLIC "${ciAnimatedGif_PROJECT_ROOT}/src" )
+    target_include_directories(ciGif SYSTEM BEFORE PUBLIC "${CINDER_PATH}/include" )
 
 
     # If your Cinder block has no source code but instead pre-build libraries,
@@ -31,6 +31,6 @@ if(NOT TARGET ciAnimatedGif)
                 "${CINDER_PATH}/${CINDER_LIB_DIRECTORY}"
                 "$ENV{CINDER_PATH}/${CINDER_LIB_DIRECTORY}")
     endif()
-    target_link_libraries(ciAnimatedGif PRIVATE cinder)
+    target_link_libraries(ciGif PRIVATE cinder)
 
 endif()
