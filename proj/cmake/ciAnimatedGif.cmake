@@ -3,7 +3,7 @@ if(NOT TARGET ciAnimatedGif)
     get_filename_component(ciAnimatedGif_PROJECT_ROOT "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
 
     # Define ${CINDER_PATH} as usual.
-    get_filename_component(CINDER_PATH "${ciAnimatedGif_PROJECT_ROOT}/../.." ABSOLUTE)
+    get_filename_component(CINDER_PATH "C:/Users/tomok/Downloads/cinder_0.9.2_vc2015/cinder_0.9.2_vc2015/blocks/ciAnimatedGif/../../../.." ABSOLUTE)
 
     # Make a list of source files and define that to be ${SOURCE_LIST}.
     file(GLOB SOURCE_LIST CONFIGURE_DEPENDS
